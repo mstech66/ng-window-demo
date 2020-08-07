@@ -10,6 +10,7 @@ export class AppComponent {
   count = 0;
   activeWindows = [];
   currentActiveWindow = null;
+  activeWindowId = null; // for highlight
 
   @HostListener('window:keyup', ['$event'])
   keyEvent(event: KeyboardEvent) {
@@ -47,5 +48,6 @@ export class AppComponent {
 
   setWindowListener(id: string) {
     this.currentActiveWindow = document.getElementById(id);
+    this.activeWindowId = id; // for highlight
   }
 }
